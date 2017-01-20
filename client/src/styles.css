@@ -1,0 +1,22 @@
+.nav-tabs {
+  background-color: #2D76A5;
+}
+.nav-tabs > li {
+  position: relative;
+  float: left;
+}
+.nav-tabs > li > a {
+  color: white;
+  display: block;
+  border-radius: 0px;
+  padding: 1.3em 1em;
+  font-size: 1.4rem;
+  line-height: 1.3em;
+}
+
+.nav-tabs > li:hover > a {
+  background: #87bbde;
+}
+.nav-tabs > li > a:hover {
+  border: 1px solid transparent;
+}
