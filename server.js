@@ -1,6 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 const compose = require('./server/compose');
+const path = require('path');
 
 const app = express();
 
@@ -10,6 +11,8 @@ app.set('port', (process.env.PORT || 3001));
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 }
+
+app.use('/assets', express.static(path.join(__dirname, '/client/assets')));
 
 app.get('/', (req, res) => {
   compose('buncombe', 'home', (result) => {
@@ -41,7 +44,6 @@ app.get('/api/food', (req, res) => {
   }
 
   res.json({title: "NC Reentry Resources Hub"});
-
 });
 
 app.listen(app.get('port'), () => {

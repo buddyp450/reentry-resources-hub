@@ -7,8 +7,8 @@ class TopNavBar extends Component {
 
   render() {
     return (
-      <div>
-        <Tabs defaultActiveKey={0} id="nav">
+      <div style={styles.style}>
+        <Tabs defaultActiveKey={0} id="nav" styles={styles.style}>
         {
           navHeaders.map(function(headerStr, idx) {
             return <Tab eventKey={idx} title={headerStr} key={idx} />
@@ -17,6 +17,12 @@ class TopNavBar extends Component {
         </Tabs>
       </div>
     )
+  }
+}
+
+const styles = {
+  style: {
+    alignSelf: 'flex-end',
   }
 }
 
